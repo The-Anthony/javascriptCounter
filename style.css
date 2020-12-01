@@ -1,0 +1,146 @@
+:root {
+    --bgColor: #161a1d;
+    --color: #d3d3d3;
+    --emphColor: #e85d04;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    background-color: var(--bgColor);
+    color: var(--color);
+    font-family: 'Major Mono Display', monospace;
+}
+
+.counter {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.number {
+    font-size: 4rem;
+    position: absolute;
+    top: auto;
+    right: auto;
+    left: auto;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    position: absolute;
+}
+
+.plus, .less {
+    color: var(--bgColor);
+    background-color: var(--color);
+    border: 0;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    font-size: 2.5em;
+    transition: background-color 0.5s;
+}
+
+.less:hover, .plus:hover {
+    cursor: pointer;
+}
+
+.less:focus, .plus:focus {
+    outline: none;
+}
+
+@keyframes spinPlus {
+    0% {transform: rotate(0deg);}
+
+    50% {font-size: 0.5em;}
+
+    90% {font-size: 4.5em;}
+    
+    100%{
+        transform: rotate(360deg);
+        font-size: 4em;
+    }
+}
+
+@keyframes spinLess {
+    0% {transform: rotate(0deg);}
+
+    50% {font-size: 0.5em;}
+
+    90% {font-size: 4.5em;}
+
+    100%{
+        transform: rotate(-360deg);
+        font-size: 4em;
+    }
+}
+
+@media only screen and (max-width:540px) {
+    .buttons {
+        top: 60%;
+        width: 80%;
+    }
+    .number {
+        top: 25%;
+    }
+}
+
+
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2) and ( min-width: 2000px),
+only screen and (   min--moz-device-pixel-ratio: 2) and ( min-width: 2000px),
+only screen and (     -o-min-device-pixel-ratio: 2/1) and ( min-width: 2000px),
+only screen and (        min-device-pixel-ratio: 2) and ( min-width: 2000px),
+only screen and (                min-resolution: 192dpi) and ( min-width: 2000px),
+only screen and (                min-resolution: 2dppx) and ( min-width: 2000px) { 
+
+    .number {
+        font-size: 8em;
+    }
+
+    .plus, .less {
+        width: 140px;
+        height: 140px;
+        font-size: 5em;   
+    }
+    
+    @keyframes spinPlus {
+        0% {transform: rotate(0deg);}
+    
+        50% {font-size: 1em;}
+    
+        90% {font-size: 9em;}
+        
+        100%{
+            transform: rotate(360deg);
+            font-size: 8em;
+        }
+    }
+    
+    @keyframes spinLess {
+        0% {transform: rotate(0deg);}
+    
+        50% {font-size: 1em;}
+    
+        90% {font-size: 9em;}
+    
+        100%{
+            transform: rotate(-360deg);
+            font-size: 8rem;
+        }
+    }
+
+}
